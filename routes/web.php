@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,29 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route that sends back a view
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// Route that sends back a string
-Route::get('/users', function () {
-   return 'Welcome to the users page';
-});
-
-// Route that sends back an array. Laravel will automatically convert array to JSON response
-Route::get('/users', function () {
-    return ['PHP', 'HTML', 'Laravel'];
-});
-
-// Route that sends back an array but as a JSON
-Route::get('/users', function () {
-   return response()->json([
-     'name' => 'Shahid',
-     'designation' => 'UI Developer'
-   ]);
-});
-
-// Route that sends back function
-Route::get('/users', function () {
-    return redirect('/');
-});
+Route::get('/products', [ProductController::class, 'index']);

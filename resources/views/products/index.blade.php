@@ -10,7 +10,7 @@
     <h1>These are your products</h1>
     <ul>
         @foreach($data as $item)
-            <li>{{ $item }}</li>
+            <li><a href="{{ $item }}">{{ $item }}</a></li>
         @endforeach
     </ul>
 </body>

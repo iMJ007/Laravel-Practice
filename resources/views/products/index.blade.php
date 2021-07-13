@@ -8,10 +8,6 @@
 </head>
 <body>
     <h1>These are your products</h1>
-    <ul>
-        @foreach($data as $item)
-            <li><a href="{{ $item }}">{{ $item }}</a></li>
-        @endforeach
-    </ul>
+    <a href="{{ route('products') }}">Products</a>
 </body>
 </html>

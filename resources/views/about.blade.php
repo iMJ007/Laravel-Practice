@@ -1,19 +1,21 @@
-@if(5 > 10)
-    <p>5 is less than 10</p>
-@elseif(5 == 10)
-    <p>5 is less than 10</p>
-@else
-    <p>5 is equal to 10</p>
-@endif
+{{-- Comparing multiple position conditions --}}
 
-@unless(empty($name))
-    <p>Name isn't empty</p>
-@endunless
+@switch($data['name'])
+    @case('John')
+    <h2>Name is John</h2>
+    @break
+    @case('Dary')
+    <h2>Name is Dary</h2>
+    @break
+    @case('Mike')
+    <h2>Name is Mike</h2>
+    @break
+    @default
+    <h2>No match found</h2>
+@endswitch
 
-@empty(!$name)
-    <p>Name is empty</p>
-@endempty
+{{-- Loops--}}
+@foreach($data['cars'] as $car)
+    <h3>{{ $car }}</h3>
+@endforeach
 
-@isset($name)
-    <p>Name has been set</p>
-@endisset
